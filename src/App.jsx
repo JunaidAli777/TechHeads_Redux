@@ -17,6 +17,7 @@ const products = [
 ];
 
 function App() {
+  
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>

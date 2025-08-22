@@ -1,9 +1,11 @@
 import { FaMinus, FaPlus, FaCartPlus } from "react-icons/fa6"
 import { addToCart, handleQtyChange } from "../features/cartSlice"
 import { useSelector, useDispatch } from "react-redux"
+
 const Products = ({ products }) => {
   const cart = useSelector(state => state.cart)
   const dispatch = useDispatch();
+
   const getItemQty = ((productId) => {
     const itemExists = cart.find(item => item.id === productId)
     if (itemExists) {
@@ -12,6 +14,7 @@ const Products = ({ products }) => {
       return 0
     }
   })
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-8"> Our Products</h1>

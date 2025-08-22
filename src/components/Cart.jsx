@@ -6,10 +6,12 @@ import { handleQtyChange, emptyCart, removeFromCart } from "../features/cartSlic
 
 const Cart = () => {
   const cart = useSelector(state => state.cart);
+
   const [showDeleteItemConfirmation, setShowDeleteItemConfirmation] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
   const [showEmptyCartConfirmation, setShowEmptyCartConfirmation] = useState(false);
   const dispatch = useDispatch();
+  
   const getTotalPrice = () =>
     cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 

@@ -7,9 +7,11 @@ import { useSelector } from 'react-redux';
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const cart = useSelector(state => state.cart);
+
     const getTotalItems = () => {
         return cart.reduce((total, item) => (total + item.quantity), 0);
     }
+    
     return (
         <header className="bg-white shadow-md border-none">
             <nav className="max-w-6xl mx-auto px-4 py-4">
